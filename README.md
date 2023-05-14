@@ -1,0 +1,2 @@
+# ZPOSprawka
+This is a project I did for a University. It included a simple system for students and teachers in University which allows students to send their work for teachers to check it. Then they can grade it or return the students work back to correct it. It is slightly underdone and bugged, but it should work just fine with a little bit of work, so feel free to use it/parts of it in your projects.
