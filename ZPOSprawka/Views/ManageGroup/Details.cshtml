@@ -1,0 +1,29 @@
+﻿@model ZPOSprawka.Models.GroupDetailsViewModel
+
+@Model.Name
+<br />
+Aktywna: @Model.isActive
+<br />
+Prowadzący: @Model.Leader.UserName
+<br />
+@Html.ActionLink("Dodaj ćwiczenie", "AddExercise", new { id = ViewContext.RouteData.Values["id"] })
+<br />
+Lista zadanych ćwiczeń:
+<br />
+@foreach (var z in Model.ExerciseList)
+{
+    @z.Name @Html.ActionLink(" Podgląd ", "ExerciseDetails", new { id = z.Id }) @Html.ActionLink("Usuń", "DeleteExercise", new { id = z.Id })
+   <br />
+}
+@Html.ActionLink("Dodaj studenta", "AddStudentToGroup", new { id = ViewContext.RouteData.Values["id"] })
+<br />
+Lista studencioków:
+<br />
+@if (Model.AttendantList != null)
+{
+    foreach (var s in Model.AttendantList)
+    {
+        @s.UserName @s.Name @s.Surname @Html.ActionLink("Usuń gnoja", "RemoveStudentFromGroup", new { studentid = s.Id, groupid = ViewContext.RouteData.Values["id"] })
+        <br />
+    }
+}

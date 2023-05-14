@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ZPOSprawka.Models.UsersViewModel>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"><b>E-mail</b></th>
+            <th scope="col"><b>Imię</b></th>
+            <th scope="col"><b>Nazwisko</b></th>
+            <th scope="col"><b>Akcje</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @i.Email
+                    @if (i.isAdmin)
+                    {
+                        <span class="badge badge-danger">Admin</span>
+                    }
+                    @if (i.isProwadzacy)
+                    {
+                        <span class="badge badge-danger">Prowadzący</span>
+                    }
+                </td>
+                <td>@i.Name</td>
+                <td>@i.Surname</td>
+                @if (User.Identity.Name != i.Email)
+                {
+                    <td>
+                        @Html.ActionLink("Edytuj", "Edituser", new { id = i.Id }) |
+                        @Html.ActionLink("Usuń", "Deleteuser", new { id = i.Id })
+                    </td>
+                }
+                else
+                {
+                    <td><small>(Jesteś zalogowany jako ten użytkownik)</small></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+﻿@model ZPOSprawka.Models.SendReportViewModel
+
+
+<form enctype="multipart/form-data" asp-action="SendReport" method="post">
+    <div class="form-group">
+        <label asp-for="file"></label>
+        <input asp-for="file" />
+        <span asp-validation-for="file" class="text-danger"></span>
+    </div>
+    <button type="submit">Zapisz</button>
+</form>

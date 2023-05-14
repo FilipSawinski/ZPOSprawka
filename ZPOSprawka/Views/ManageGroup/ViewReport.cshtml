@@ -1,0 +1,22 @@
+﻿@model ZPOSprawka.Models.Report
+<ul>
+    <li> @Html.ActionLink("Kurwa wróć se", "ExerciseDetails", new { id = Model.Exercise.Id })</li>
+</ul>
+    @if (Model.Grade == 0)
+    {
+        <a>@Html.ActionLink("Oceń", "GradeReport", new { id = Model.Id })</a>
+        <br />
+
+    }
+    else
+    {
+        <a>@Html.ActionLink("Zmień ocenę", "GradeReport", new { id = Model.Id })</a>
+        <br />
+    }
+
+    <a>@Html.ActionLink("Pobierz", "DownloadReport", "Exercise", new { id = Model.Id })</a>
+    <br />
+    Ocena: @Model.Grade
+    <br />
+    Status: @Model.Status
+    <br />

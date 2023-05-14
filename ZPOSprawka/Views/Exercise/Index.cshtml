@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ZPOSprawka.Models.CourseGroup>
+
+Moje grupy <br />
+<ul>
+    @foreach(var g in Model)
+    {
+        <li>@g.Name @g.Leader.Email @Html.ActionLink("Wybierz", "GroupDetails", new { id = g.Id })</li>
+    }
+</ul>

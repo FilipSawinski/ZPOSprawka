@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ZPOSprawka.Models.Report>
+
+Wysłane zadania <br />
+<ul>
+    @foreach(var r in Model)
+    {
+        <li>@r.Exercise.Name od: @r.Sender.Email status: @r.Status data: @r.SendDate</li>
+        <li>@Html.ActionLink("Podgląd", "ViewReport", new { id = r.Id }) @Html.ActionLink("Oceń", "GradeReport", new { id = r.Id })</li>
+    }
+</ul>

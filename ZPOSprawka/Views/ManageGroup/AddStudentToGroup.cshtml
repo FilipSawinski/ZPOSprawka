@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ZPOSprawka.Models.ApplicationUser>
+
+
+@Html.ActionLink("Powrotus", "Details", new { id = ViewContext.RouteData.Values["id"] }) <br/>
+@if(Model!=null)
+{
+    @foreach(var s in Model)
+    {
+        <a>@s.UserName @Html.ActionLink("Dodaj", "SelectStudentToGroup", new { studentid = s.Id, groupid = ViewContext.RouteData.Values["id"] })</a><br/>
+    }
+}

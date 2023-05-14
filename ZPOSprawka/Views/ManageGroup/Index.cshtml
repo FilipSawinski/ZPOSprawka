@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ZPOSprawka.Models.CourseGroup>
+
+@Html.ActionLink("Stwórz pustą grupę", "CreateGroup") <br />
+@Html.ActionLink("Stwórz grupę z listy studentów", "CreateGroupFromFile")
+<br />
+
+@foreach(var m in Model)
+{
+<a>@m.Name @m.isActive @m.StudentList.Count @Html.ActionLink("Podgląd", "Details", new { id = m.Id }) @Html.ActionLink("Zamknij", "CloseGroup", new { id = m.Id }) @Html.ActionLink("Usuń", "DeleteGroup", new { id = m.Id })</a>
+    <br />
+}

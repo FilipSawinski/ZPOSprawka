@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ZPOSprawka.Models.Exercise>
+
+Zadane sprawozdania:<br />
+<ul>
+    @foreach(var e in Model)
+    { 
+          <li>
+              @e.Name @Html.ActionLink("Wybierz", "ExerciseDetails", new { id = e.Id })
+          </li>
+    }
+</ul>

@@ -1,0 +1,12 @@
+﻿@model ZPOSprawka.Models.CourseGroup
+
+<a>@Model.Name</a>
+<br />
+Czy na pewno chcesz usunąć?
+<br />
+
+<form asp-action="DeleteGroup">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Usuń" />
+    <a asp-action="Index">Powrót</a>
+</form>

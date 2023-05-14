@@ -1,0 +1,10 @@
+﻿@model ZPOSprawka.Models.CourseGroup
+
+<a>@Model.Name</a><br />
+Czy na pewno chcesz zamknąć? <br />
+
+<form asp-action="CloseGroup">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Zamknij" />
+    <a asp-action="Index">Powrót</a>
+</form>

@@ -1,0 +1,21 @@
+﻿@model ZPOSprawka.Models.ExerciseDetailsViewModel
+
+<body>
+    <h4>Info o zadaniu</h4>
+    @Model.Exercise.Name<br />
+    @Model.Exercise.Description<br />
+    <h4>Info o przesłaniu</h4>
+    @if (Model.Report == null)
+    {
+        <a>Nie przesłano</a>
+        @Html.ActionLink("Wyślij zadanie", "SendReport", new { id = Model.Exercise.Id }) <br />
+    }
+    else
+    {
+        @Html.ActionLink("Wyślij ponownie", "SendReport", new { id = Model.Exercise.Id }) <br />
+        <a>Przesłano: @Model.Report.SendDate</a><br />
+        <a>Status: @Model.Report.Status</a><br />
+        <a>Ocena:  @Model.Report.Grade</a><br />
+        @Html.ActionLink("Pobierz", "DownloadReport", new { id = Model.Report.Id }) <br />
+    }
+</body>

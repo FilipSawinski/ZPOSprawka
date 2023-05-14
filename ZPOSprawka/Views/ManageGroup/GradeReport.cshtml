@@ -1,0 +1,18 @@
+﻿@model ZPOSprawka.Models.GradeReportViewModel
+
+@Html.ActionLink("Kurwa wróć se", "ExerciseDetails", new { id = Model.exerciseId })<br />
+<form asp-action="GradeReport" method="post">
+    <div class="form-group">
+        <label asp-for="Grade"></label>
+        <input asp-for="Grade" />
+        <span asp-validation-for="Grade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="isToCorrect"></label>
+        <input type="checkbox" asp-for="isToCorrect" />
+        <span asp-validation-for="isToCorrect" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Oceń" class="btn btn-primary" />
+    </div>
+</form>

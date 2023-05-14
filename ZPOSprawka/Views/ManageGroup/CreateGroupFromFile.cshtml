@@ -1,0 +1,21 @@
+﻿@model ZPOSprawka.Models.AddGroupFromFileViewModel
+
+Pierdolnij se grupe z pliku <br />
+<form enctype="multipart/form-data" asp-action="CreateGroupFromFile" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="list"></label>
+        <input asp-for="list" />
+        <span asp-validation-for="list" class="text-danger"></span>
+    </div>
+    <button type="submit">Zapisz</button>
+</form>
